@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.msp360.at</groupId>
+    <artifactId>MBS</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <checkstyle.version>10.3.3</checkstyle.version>
+        <testing.version>7.6.1</testing.version>
+        <jquery.version>3.6.1</jquery.version>
+        <assertj-core.version>3.23.1</assertj-core.version>
+        <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+        <allure-testng.version>2.20.1</allure-testng.version>
+        <allure-maven.version>2.12.0</allure-maven.version>
+        <aspectj.version>1.9.9.1</aspectj.version>
+        <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
+        <annotations.version>23.0.0</annotations.version>
+        <!--<suite.name>ru/levelp/at/homework6/AllTestsSuite.xml</suite.name>-->
+
+        <selenium-java.version>4.6.0</selenium-java.version>
+        <webdrivermanager.version>5.3.0</webdrivermanager.version>
+        <rest-assured.version>5.2.0</rest-assured.version>
+
+        <suite.base.dir>${project.basedir}/src/test/resources</suite.base.dir>
+        <version>5.2.0</version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <json-path.version>2.7.0</json-path.version>
+        <javafaker.version>1.0.2</javafaker.version>
+    </properties>
+
+    <!--    <profiles>
+            <profile>
+                <id>homework6-all-test-suite</id>
+                <properties>
+                    <suite.name>ru.levelp.at.homework6/AllTestsSuite.xml</suite.name>
+                </properties>
+            </profile>
+        </profiles>-->
+
+    <!--    <profiles>
+            <profile>
+                <id>homework2-all-negativetests-suite</id>
+                <activation>
+                    <activeByDefault>true</activeByDefault>
+                </activation>
+                <properties>
+                    <suite.name>ru.levelp.at.homework2/AllNegativeTestsSuite.xml</suite.name>
+                </properties>
+            </profile>
+
+
+            <profile>
+                <id>homework2-all-positivetests-suite</id>
+                <properties>
+                    <suite.name>ru.levelp.at.homework2/AllPositiveTestsSuite.xml</suite.name>
+                </properties>
+            </profile>
+
+            <profile>
+                <id>homework2-all-tests-suite</id>
+                <properties>
+                    <suite.name>ru.levelp.at.homework2/AllTestsSuite.xml</suite.name>
+                </properties>
+            </profile>
+        </profiles>-->
+
+
+    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testing.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.webjars</groupId>
+                    <artifactId>jquery</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${jquery.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.3.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${json-path.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-maven-plugin</artifactId>
+            <version>${lombok-maven-plugin.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${annotations.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.10.3</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure-testng.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <configLocation>
+                        <!--  pay attention to use exact url for checkstyle plugin ruleset  -->
+                        https://raw.githubusercontent.com/khda91/leveup-code-checkers-configurations/main/checkstyle/checkstyle.xml
+                    </configLocation>
+                    <!-- <encoding>${project.build.sourceEncoding}</encoding> (doesn't work?) -->
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <violationSeverity>warning</violationSeverity>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Surefire -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                    <suiteXmlFiles>
+                        <!--<suiteXmlFile>${suite.base.dir}/com.msp360.at.wizards.tests.nbf.files/AllTestsSuite.xml</suiteXmlFile>-->
+                        <suiteXmlFile>testNG.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <!-- <includes>
+                         <include>**/tests**</include>
+                     </includes>-->
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
+                <configuration>
+                    <reportVersion>
+                        ${allure-maven.version}
+                    </reportVersion>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
+

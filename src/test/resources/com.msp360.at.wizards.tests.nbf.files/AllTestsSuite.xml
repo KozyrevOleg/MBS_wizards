@@ -1,0 +1,12 @@
+<?xml version= "1.0" encoding= "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="All Tests Suite">
+
+   <test name="All Tests">
+        <packages>
+            <package name="com.msp360.at.wizards.tests.nbf.files"/>
+        </packages>
+    </test>
+
+</suite>

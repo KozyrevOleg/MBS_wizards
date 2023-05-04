@@ -1,0 +1,8 @@
+/shelf/
+.idea
+target
+*.class
+*.iml
+.idea
+target/allure-results
+.allure
