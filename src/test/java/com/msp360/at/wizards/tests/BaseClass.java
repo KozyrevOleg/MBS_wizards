@@ -116,7 +116,7 @@ public abstract class BaseClass {
         //ChromeOptions chromeOptions = new ChromeOptions();
 
         //driver.set(new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"),
-                environmentResourcesGenerator.getCapabilities(browser);
+        environmentResourcesGenerator.getCapabilities(browser);
 
         driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
