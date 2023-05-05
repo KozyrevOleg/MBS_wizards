@@ -115,7 +115,7 @@ public abstract class BaseClass {
         //After updating Chrome, the following strings were added
         //ChromeOptions chromeOptions = new ChromeOptions();
 
-        driver.set(new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"),
+        driver.set(new RemoteWebDriver(new URL("http://172.17.0.3:4444/wd/hub"),
             environmentResourcesGenerator.getCapabilities(browser)));
 
         driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
