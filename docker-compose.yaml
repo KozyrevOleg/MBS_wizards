@@ -1,25 +1,25 @@
 version: '3.6'
 
 services:
+
   selenoid:
-    image: aerokube/selenoid:latest-release
-    volumes:
-      - "/mnt/c/Users/okozy/.aerokube/selenoid:/etc/selenoid"
-      - "/mnt/c/Users/okozy/.aerokube/selenoid/video:/opt/selenoid/video"
-      - "/mnt/c/Users/okozy/.aerokube/selenoid/logs:/opt/selenoid/logs"
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    environment:
-      - OVERRIDE_VIDEO_OUTPUT_DIR=work/selenoid/video
-    command: [ "-conf", "/etc/selenoid/browsers.json", "-video-output-dir", "/opt/selenoid/video", "-log-output-dir", "/opt/selenoid/logs" ]
+    image: "aerokube/selenoid"
+    network_mode: bridge
+    restart: unless-stopped
     ports:
       - "4444:4444"
-    network_mode: bridge
+    volumes:
+      - "/mnt/c/Users/okozy/.aerokube/selenoid:/etc/selenoid/"
+      - "/var/run/docker.sock:/var/run/docker.sock"
 
   selenoid-ui:
-    image: aerokube/selenoid-ui:latest-release
+    image: "aerokube/selenoid-ui"
     network_mode: bridge
+    depends_on:
+      - selenoid
     links:
       - selenoid
+    restart: unless-stopped
     ports:
       - "8080:8080"
     command: [ "--selenoid-uri", "http://selenoid:4444" ]
