@@ -10,16 +10,16 @@
 
         <parameter name="browser" value="Firefox"/>
 
-        <packages>
+       <!-- <packages>
             <package name="com.msp360.at.wizards.tests.nbf.files"/>
-        </packages>
-        <!--<classes>
+        </packages>-->
+        <classes>
             <class name="com.msp360.at.wizards.tests.nbf.files.WhatToBackUp"/>
-        </classes>-->
+        </classes>
 
     </test>
 
-   <test name="Chrome. NBF Files">
+<!--   <test name="Chrome. NBF Files">
 
         <parameter name="browser" value="Chrome"/>
 
@@ -28,6 +28,6 @@
         </packages>
 
 
-    </test>
+    </test>-->
 
 </suite>

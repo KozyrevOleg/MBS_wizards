@@ -16,14 +16,14 @@ public class EnvironmentResourcesGenerator {
     private static final String ALLURE_RESULTS = "allure-results";
     public Capabilities capabilities;
 
-    public Capabilities getCapabilities(String browser) {
+    /* public Capabilities getCapabilities(String browser) {
         if (browser.equals("Firefox")) {
             capabilities = OptionsManager.getFirefoxOptions();
         } else {
             capabilities = OptionsManager.getChromeOptions();
         }
         return capabilities;
-    }
+    }*/
 
     public EnvironmentResourcesGenerator() {
     }

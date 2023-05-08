@@ -1,10 +1,13 @@
 package com.msp360.at.wizards.tests.nbf.files;
 
 import com.msp360.at.wizards.tests.BaseClass;
+import io.qameta.allure.testng.Tag;
+import io.qameta.allure.testng.Tags;
 import org.testng.annotations.Test;
 
 public class WelcomePage extends BaseClass {
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfWelcomePage", description = "Checking FFI link and Plan Name field")
     public void testWelcomePage(String computerName, String stepName,
                                 String planName, String destination) throws InterruptedException {

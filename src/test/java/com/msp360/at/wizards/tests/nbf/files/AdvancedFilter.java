@@ -3,10 +3,13 @@ package com.msp360.at.wizards.tests.nbf.files;
 import com.msp360.at.wizards.tests.BaseClass;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.testng.Tag;
+import io.qameta.allure.testng.Tags;
 import org.testng.annotations.Test;
 
 public class AdvancedFilter extends BaseClass {
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfAdvancedFilter",
             description = "Tests for 'Advanced Filter' step. Cases with different list of selected options")
     @Severity(SeverityLevel.NORMAL)

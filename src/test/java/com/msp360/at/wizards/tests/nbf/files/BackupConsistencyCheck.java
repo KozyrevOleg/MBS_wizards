@@ -3,10 +3,13 @@ package com.msp360.at.wizards.tests.nbf.files;
 import com.msp360.at.wizards.tests.BaseClass;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.testng.Tag;
+import io.qameta.allure.testng.Tags;
 import org.testng.annotations.Test;
 
 public class BackupConsistencyCheck extends BaseClass {
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfBackupConsistencyCheck",
             description = "Tests for 'Backup Consistency Check' step. Cases with enabled/disabled option")
     @Severity(SeverityLevel.NORMAL)

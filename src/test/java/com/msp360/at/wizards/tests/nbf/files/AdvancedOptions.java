@@ -4,11 +4,14 @@ import com.msp360.at.wizards.steps.StorageClasses;
 import com.msp360.at.wizards.tests.BaseClass;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.testng.Tag;
+import io.qameta.allure.testng.Tags;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.testng.annotations.Test;
 
 public class AdvancedOptions extends BaseClass {
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfAdvancedOptions",
             description = "Tests for 'Advanced Options' step. Cases with different list of selected options")
     @Severity(SeverityLevel.NORMAL)

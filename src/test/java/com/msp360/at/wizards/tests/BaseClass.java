@@ -1,7 +1,5 @@
 package com.msp360.at.wizards.tests;
 
-import static org.assertj.core.util.Arrays.asList;
-
 import com.msp360.at.wizards.NbfFilesWizardPage;
 import com.msp360.at.wizards.steps.LoginPageSteps;
 import com.msp360.at.wizards.steps.NbfFilesWizardAdvancedFilterPageSteps;
@@ -37,11 +35,11 @@ public abstract class BaseClass {
 
     //protected static WebDriver driver;
     protected static WebDriverWait wait;
-    //public CapabilityFactory capabilityFactory = new CapabilityFactory();
+    public CapabilityFactory capabilityFactory = new CapabilityFactory();
     public EnvironmentResourcesGenerator environmentResourcesGenerator = new EnvironmentResourcesGenerator();
     protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 
-    protected static final String GRID_URL = "http://192.168.56.1:4444";
+    protected static final String CONTAINER_URL = "http://localhost:4444/wd/hub"; //http://172.17.0.2:4444/wd/hub
     protected static final String URL = "https://mspbackups.com/";
     protected static final String URL_STORAGE_ACCOUNT = "" + URL + "AP/EditAccount.aspx";
     protected static final String URL_NEW_RM_PAGE = "" + URL + "AP/Computers";
@@ -115,8 +113,8 @@ public abstract class BaseClass {
         //After updating Chrome, the following strings were added
         //ChromeOptions chromeOptions = new ChromeOptions();
 
-        driver.set(new RemoteWebDriver(new URL("http://172.17.0.2:4444/wd/hub"),
-            environmentResourcesGenerator.getCapabilities(browser)));
+        driver.set(new RemoteWebDriver(new URL(CONTAINER_URL),
+            capabilityFactory.getCapabilities(browser)));
 
         driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 

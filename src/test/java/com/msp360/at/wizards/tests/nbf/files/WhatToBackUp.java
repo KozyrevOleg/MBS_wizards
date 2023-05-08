@@ -2,10 +2,13 @@ package com.msp360.at.wizards.tests.nbf.files;
 
 
 import com.msp360.at.wizards.tests.BaseClass;
+import io.qameta.allure.testng.Tag;
+import io.qameta.allure.testng.Tags;
 import org.testng.annotations.Test;
 
 public class WhatToBackUp extends BaseClass {
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
 
     @Test(dataProvider = "nbfWhatToBackUp")
     public void testWhatToBackUp(String computerName, String planName, String destination) throws InterruptedException {

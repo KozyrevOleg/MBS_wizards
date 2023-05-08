@@ -1,10 +1,13 @@
 package com.msp360.at.wizards.tests.nbf.files;
 
 import com.msp360.at.wizards.tests.BaseClass;
+import io.qameta.allure.testng.Tag;
+import io.qameta.allure.testng.Tags;
 import org.testng.annotations.Test;
 
 public class SelectBackupStorage extends BaseClass {
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfBackupStorage", description = "Checking the selection of one of the storages "
             + "and 'add storage link")
     public void testSelectBackupStorage(String computerName, String planName, String destination)

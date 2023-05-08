@@ -7,11 +7,14 @@ import com.msp360.at.wizards.tests.BaseClass;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.testng.Tag;
+import io.qameta.allure.testng.Tags;
 import org.testng.annotations.Test;
 
 public class ScheduleOptions extends BaseClass {
 
     //FFI
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsFfiEnabledTypeMonthly",
             description = "Tests for 'FFI Schedule' option. Schedule Type: Monthly -> Day of week")
     @Severity(SeverityLevel.NORMAL)
@@ -101,6 +104,7 @@ public class ScheduleOptions extends BaseClass {
     }
 
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsFfiEnabledTypeMonthlyDayOfMonth",
             description = "Tests for 'FFI Schedule' option. Schedule Type: Monthly -> Day of month")
     @Severity(SeverityLevel.NORMAL)
@@ -185,6 +189,7 @@ public class ScheduleOptions extends BaseClass {
     }
 
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsFfiEnabledTypeDaily",
             description = "Tests for 'FFI Schedule' option. Schedule Type: Daily")
     @Severity(SeverityLevel.NORMAL)
@@ -269,6 +274,7 @@ public class ScheduleOptions extends BaseClass {
     }
 
     //Recurring
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsRecurringEnabledTypeMonthly",
             description = "Tests for 'Recurring Schedule' option. Schedule Type: Monthly -> Day of week")
     @Severity(SeverityLevel.NORMAL)
@@ -329,6 +335,7 @@ public class ScheduleOptions extends BaseClass {
     }
 
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsRecurringEnabledTypeMonthlyDayOfMonth",
             description = "Tests for 'Recurring Schedule' option. Schedule Type: Monthly -> Day of month")
     @Severity(SeverityLevel.NORMAL)
@@ -387,6 +394,7 @@ public class ScheduleOptions extends BaseClass {
     }
 
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsRecurringEnabledTypeDaily",
             description = "Tests for 'Recurring Schedule' option. Schedule Type: Daily")
     @Severity(SeverityLevel.NORMAL)
@@ -439,6 +447,7 @@ public class ScheduleOptions extends BaseClass {
     }
 
     //Full
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsFullEnabledTypeMonthly",
             description = "Tests for 'Full Schedule' option. Schedule Type: Monthly")
     @Severity(SeverityLevel.NORMAL)
@@ -493,6 +502,7 @@ public class ScheduleOptions extends BaseClass {
     }
 
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsFullEnabledTypeMonthlyDayOfMonth",
             description = "Tests for 'Full Schedule' option. Schedule Type: Monthly -> Day of month")
     @Severity(SeverityLevel.NORMAL)
@@ -547,6 +557,7 @@ public class ScheduleOptions extends BaseClass {
     }
 
 
+    @Tags({@Tag("UI"), @Tag("Wizard Step")})
     @Test(dataProvider = "nbfScheduleOptionsFullEnabledTypeDaily",
             description = "Tests for 'Full Schedule' option. Schedule Type: Daily")
     @Issue("MBS-19424")
