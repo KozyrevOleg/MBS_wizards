@@ -39,7 +39,7 @@ public abstract class BaseClass {
     public EnvironmentResourcesGenerator environmentResourcesGenerator = new EnvironmentResourcesGenerator();
     protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 
-    protected static final String CONTAINER_URL = "http://localhost:4444/wd/hub";
+    protected static final String CONTAINER_URL = "http://172.17.0.2:4444/wd/hub";
     //http://172.17.0.2:4444/wd/hub, http://localhost:4444/wd/hub
     protected static final String URL = "https://mspbackups.com/";
     protected static final String URL_STORAGE_ACCOUNT = "" + URL + "AP/EditAccount.aspx";

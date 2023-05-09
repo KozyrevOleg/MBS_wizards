@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="5" name="Suite" parallel="classes" >
+    <listeners>
+        <listener class-name="com.msp360.at.wizards.extensions.FailTestListener"/>
+    </listeners>
+
+    <test name="Chrome. NBF Files">
+
+            <parameter name="browser" value="Chrome"/>
+
+            <packages>
+                <package name="com.msp360.at.wizards.tests.nbf.files"/>
+            </packages>
+
+        </test>
+
+</suite>
