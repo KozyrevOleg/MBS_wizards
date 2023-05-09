@@ -25,11 +25,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
-
 
 public abstract class BaseClass {
 
@@ -39,7 +39,8 @@ public abstract class BaseClass {
     public EnvironmentResourcesGenerator environmentResourcesGenerator = new EnvironmentResourcesGenerator();
     protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 
-    protected static final String CONTAINER_URL = "http://localhost:4444/wd/hub"; //http://172.17.0.2:4444/wd/hub
+    protected static final String CONTAINER_URL = "http://localhost:4444/wd/hub";
+    //http://172.17.0.2:4444/wd/hub, http://localhost:4444/wd/hub
     protected static final String URL = "https://mspbackups.com/";
     protected static final String URL_STORAGE_ACCOUNT = "" + URL + "AP/EditAccount.aspx";
     protected static final String URL_NEW_RM_PAGE = "" + URL + "AP/Computers";
@@ -408,7 +409,7 @@ public abstract class BaseClass {
         loginPageSteps.logOut();*/
     }
 
-    @AfterClass
+    @AfterSuite
     void afterClass() {
         new EnvironmentResourcesGenerator(driver.get().getCapabilities()).createProperties();
     }

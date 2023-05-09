@@ -6,7 +6,7 @@
         <listener class-name="com.msp360.at.wizards.extensions.FailTestListener"/>
     </listeners>
 
-    <test name="Firefox. All Tests. All browsers. NBF Files">
+    <test name="Firefox. NBF Files">
 
         <parameter name="browser" value="Firefox"/>
 
@@ -15,16 +15,5 @@
          </packages>
 
     </test>
-
-    <test name="Chrome. All Tests. All browsers. NBF Files">
-
-            <parameter name="browser" value="Chrome"/>
-
-            <packages>
-                <package name="com.msp360.at.wizards.tests.nbf.files"/>
-            </packages>
-
-
-        </test>
 
 </suite>

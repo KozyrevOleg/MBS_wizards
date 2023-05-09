@@ -36,41 +36,40 @@
         <javafaker.version>1.0.2</javafaker.version>
     </properties>
 
-    <!--    <profiles>
+    <profiles>
             <profile>
-                <id>homework6-all-test-suite</id>
+                <id>all-tests-all-browsers</id>
                 <properties>
-                    <suite.name>ru.levelp.at.homework6/AllTestsSuite.xml</suite.name>
+                    <suite.name>com.msp360.at.wizards.tests.nbf.files/AllTestsSuite.xml</suite.name>
                 </properties>
             </profile>
-        </profiles>-->
 
-    <!--    <profiles>
             <profile>
-                <id>homework2-all-negativetests-suite</id>
+                <id>all-tests-chrome</id>
                 <activation>
-                    <activeByDefault>true</activeByDefault>
+                    <!--<activeByDefault>true</activeByDefault>-->
                 </activation>
                 <properties>
-                    <suite.name>ru.levelp.at.homework2/AllNegativeTestsSuite.xml</suite.name>
+                    <suite.name>com.msp360.at.wizards.tests.nbf.files/AllTestsSuiteChrome.xml</suite.name>
                 </properties>
             </profile>
 
 
             <profile>
-                <id>homework2-all-positivetests-suite</id>
+                <id>all-tests-firefox</id>
                 <properties>
-                    <suite.name>ru.levelp.at.homework2/AllPositiveTestsSuite.xml</suite.name>
+                    <suite.name>com.msp360.at.wizards.tests.nbf.files/AllTestsSuiteFirefox.xml</suite.name>
                 </properties>
             </profile>
 
             <profile>
-                <id>homework2-all-tests-suite</id>
+                <id>wizards-what-to-back-up-step</id>
                 <properties>
-                    <suite.name>ru.levelp.at.homework2/AllTestsSuite.xml</suite.name>
+                    <activeByDefault>true</activeByDefault>
+                    <suite.name>com.msp360.at.wizards.tests.nbf.files/WhatToBackUpStepSuite.xml</suite.name>
                 </properties>
             </profile>
-        </profiles>-->
+        </profiles>
 
 
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -212,8 +211,8 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <suiteXmlFiles>
-                        <!--<suiteXmlFile>${suite.base.dir}/com.msp360.at.wizards.tests.nbf.files/AllTestsSuite.xml</suiteXmlFile>-->
-                        <suiteXmlFile>testNG.xml</suiteXmlFile>
+                        <suiteXmlFile>${suite.base.dir}/${suite.name}</suiteXmlFile>
+                        <!--<suiteXmlFile>${suite.base.dir}/com.msp360.at.wizards.tests.nbf.files/testNG.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <!-- <includes>
                          <include>**/tests**</include>

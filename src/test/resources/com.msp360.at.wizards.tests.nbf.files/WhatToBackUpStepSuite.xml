@@ -6,13 +6,10 @@
         <listener class-name="com.msp360.at.wizards.extensions.FailTestListener"/>
     </listeners>
 
-    <test name="Firefox. NBF Files">
+    <test name="Firefox. What to Back Up.">
 
         <parameter name="browser" value="Firefox"/>
 
-       <!-- <packages>
-            <package name="com.msp360.at.wizards.tests.nbf.files"/>
-        </packages>-->
         <classes>
             <class name="com.msp360.at.wizards.tests.nbf.files.WhatToBackUp"/>
         </classes>
