@@ -212,7 +212,7 @@
                     </argLine>
                     <suiteXmlFiles>
                         <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${suite.base.dir}/${suite.name}</suiteXmlFile>
+                        <suiteXmlFile>${suite.base.dir}/com.msp360.at.wizards.tests.nbf.files/AllTestsSuite.xml</suiteXmlFile>
                         <!--<suiteXmlFile>${suite.base.dir}/com.msp360.at.wizards.tests.nbf.files/testNG.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <!-- <includes>
