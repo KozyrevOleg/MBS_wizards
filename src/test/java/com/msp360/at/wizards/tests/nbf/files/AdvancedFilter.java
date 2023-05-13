@@ -5,6 +5,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.testng.Tag;
 import io.qameta.allure.testng.Tags;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 public class AdvancedFilter extends BaseClass {
@@ -47,9 +48,9 @@ public class AdvancedFilter extends BaseClass {
         nbfFilesWizardPage.clickNext();
         nbfFilesWizardPage.clickNext();
         nbfFilesWizardPage.clickNext();
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         nbfFilesWizardPage.fullBackupIsNotScheduled.click();
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         nbfFilesWizardPage.clickNext();
         nbfFilesWizardPageSteps.saveThePlan();
         Thread.sleep(6000);

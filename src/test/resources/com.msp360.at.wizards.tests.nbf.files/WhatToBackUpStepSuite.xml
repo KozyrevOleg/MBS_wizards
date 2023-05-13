@@ -6,12 +6,12 @@
         <listener class-name="com.msp360.at.wizards.extensions.FailTestListener"/>
     </listeners>
 
-    <test name="Firefox. What to Back Up.">
+    <test name="Firefox. Advanced Filter.">
 
         <parameter name="browser" value="Firefox"/>
 
         <classes>
-            <class name="com.msp360.at.wizards.tests.nbf.files.WhatToBackUp"/>
+            <class name="com.msp360.at.wizards.tests.nbf.files.AdvancedFilter"/>
         </classes>
 
     </test>

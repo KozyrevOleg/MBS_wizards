@@ -43,7 +43,8 @@ public class NbfFilesWizardPage extends BaseClassPage {
     public WebElement fullBackupIsNotScheduled;
 
     public void fullBackupIsNotScheduledModal() {
-        this.fullBackupIsNotScheduled.click();
+        wait.until(ExpectedConditions.visibilityOf(this.fullBackupIsNotScheduled)).click();
+        //this.fullBackupIsNotScheduled.click();
     }
 
 
